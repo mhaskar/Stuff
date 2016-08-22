@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
-```
+'''
 execute SSH command using tor script
 author : Mohammad Askar
 @mohammadaskar2
-```
+'''
 
 import socket,socks,paramiko 
 
@@ -21,11 +21,16 @@ username = "username"
 passwd = "password"
 host = "ssh.server.com"
 
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(
+try:
+ ssh = paramiko.SSHClient()
+ ssh.set_missing_host_key_policy(
     paramiko.AutoAddPolicy())
-ssh.connect(host , 22, username=username, 
+ ssh.connect(host , 22, username=username, 
     password=passwd)
+ print "Connection to your host is established"
+ print "ready to execute command :D"
+except:
+    print "Connection failed , check your information and tor connection."
 while True:
     command = raw_input("%s@SafeBox:>>"%username)   
     stdin, stdout, stderr = ssh.exec_command(command)
