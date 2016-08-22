@@ -27,8 +27,8 @@ try:
     paramiko.AutoAddPolicy())
  ssh.connect(host , 22, username=username, 
     password=passwd)
- print "Connection to your host is established"
- print "ready to execute command :D"
+ print "[+]Connection to your host is established"
+ print "[+]ready to execute command :D"
 except:
     print "Connection failed , check your information and tor connection."
 while True:
