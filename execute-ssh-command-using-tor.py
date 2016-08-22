@@ -6,7 +6,7 @@ author : Mohammad Askar
 @mohammadaskar2
 '''
 
-import socket,socks,paramiko 
+import socket,socks,paramiko,sys 
 
 def create_connection(address, timeout=None, source_address=None):
     sock = socks.socksocket()
@@ -32,6 +32,7 @@ try:
  print "[+]ready to execute commands :D"
 except:
     print "Connection failed , check your information and tor connection."
+    sys.exit()
 while True:
     command = raw_input("%s@SafeBox:>>"%username)   
     stdin, stdout, stderr = ssh.exec_command(command)
